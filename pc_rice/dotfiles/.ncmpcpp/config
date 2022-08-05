@@ -1,0 +1,100 @@
+##
+# Files
+ mpd_music_dir = "~/twardziel/general_storage/inny_saving/MUZYKA/"  
+ lyrics_directory = ~/twardziel/general_storage/inny_saving/MUZYKA/lyrics
+ ncmpcpp_directory = ~/.ncmpcpp
+ mpd_host = "localhost"
+ mpd_port = "6600"  
+ mpd_connection_timeout = "5"  
+ mpd_crossfade_time = "5"  
+
+ # Playlist
+ playlist_disable_highlight_delay = "0"  
+ playlist_display_mode = "columns"  
+ playlist_show_remaining_time = "yes"
+
+
+
+
+alternative_header_first_line_format = "$3$aqqu$/a {$3%a - $3}{$3%t$3}|{$7%f$7} $3$atqq$/a$3"
+alternative_header_second_line_format = "{{$6%b$9}{ [$6%y$9]}}|{%D}"
+user_interface = "alternative"
+default_place_to_search_in = "database"
+
+browser_display_mode = "columns"  
+
+song_columns_list_format = "(6)[yellow]{l} (69)[cyan]{f}"  
+
+song_list_format = "{%a - }{%t}|{$7%f$7}$R{$4(%l)$4}"
+song_status_format = (6)[yellow]{l} (69)[cyan]{f}
+
+#song_library_format = {$4%n - }{$5%t}|{$6%f}
+
+current_item_prefix = "$(cyan)$r"
+
+
+colors_enabled = "yes"  
+main_window_color = "green"  
+header_window_color = "green"  
+volume_color = "green"  
+progressbar_color = "green"  
+statusbar_color = "green"  
+active_window_border = "blue"
+progressbar_elapsed_color = "cyan"
+alternative_ui_separator_color = "yellow"
+player_state_color = "green"
+empty_tag_color = "yellow"
+color1 = "green"
+color2 = "cyan"
+
+
+# visualizer
+#visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "no"
+visualizer_type = "spectrum"
+visualizer_spectrum_smooth_look = yes
+visualizer_color = cyan
+visualizer_fps = 144
+visualizer_spectrum_dft_size = 5
+visualizer_spectrum_gain = 25
+
+ 
+## Navigation ##
+cyclic_scrolling = "yes"
+header_text_scrolling = "yes"
+jump_to_now_playing_song_at_start = "yes"
+lines_scrolled = "2"
+
+## Other ##
+system_encoding = "utf-8"
+regular_expressions = "extended"
+
+
+
+## Selected tracks ##
+selected_item_prefix = "* "
+discard_colors_if_item_is_selected = "no"
+
+## Seeking ##
+incremental_seeking = "yes"
+seek_time = "1"
+
+## Visivility ##
+header_visibility = "yes"
+statusbar_visibility = "yes"
+titles_visibility = "yes"
+
+progressbar_look =  "=>-"
+
+now_playing_prefix = "> "
+autocenter_mode = "yes"
+centered_cursor = "yes"
+
+# Misc
+display_bitrate = "yes"
+# enable_window_title = "no"
+follow_now_playing_lyrics = "yes"
+ignore_leading_the = "yes"
+empty_tag_marker = ""
+display_volume_level = yes

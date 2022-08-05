@@ -1,0 +1,47 @@
+window#waybar {
+    font-family: Geneva;
+    font-size: 11px;
+    min-height: 5px;
+    background-color: rgba(136, 136, 136, 0);
+    border-top: 2px solid #888;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+window > box {
+    /*background: rgba(142, 152, 167, 0.5);*/
+    color: #43221B; 
+       background: rgb(191,187,190);
+    background: linear-gradient(90deg, rgba(191,187,190,0.4) 0%, rgba(142,152,167,0.4) 60%, rgba(44,52,66,0.4) 100%); 
+    /* color: #ac9c98; */
+}
+
+#custom-separator {
+  color: #1B5E20;
+  margin: 0 25px;
+}
+
+#custom-mpd_display{
+	padding-right: 20px;
+}
+
+#custom-spacer {
+  color: #1B5E20;
+  margin: 0 7px;
+}
+
+.modules-left{
+	
+}
+.modules-right{
+	
+}
+
+tooltip{
+	background: rgba(142, 152, 167, 0.7);
+}
+
+tooltip label{
+	color: #5c3b34;
+	font-size: 20px;
+}

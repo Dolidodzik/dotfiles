@@ -1,0 +1,94 @@
+{
+	"layer": "top",
+
+	// top bar
+	"position": "top",
+
+	"height": 28,
+
+	// modules themselves
+	"modules-center": [
+		"custom/ram_usage", "custom/spacer", "cpu", "temperature", "custom/spacer", "clock", "custom/spacer", "custom/weather", "custom/spacer", "custom/gpu_temp", "custom/gpu_usage",
+	],
+	
+	"modules-left": [
+		
+	],
+	
+	"modules-right": [
+		"custom/mpd_display"
+	],
+	
+	// clock in pog ISO8601 format
+	"clock": {
+		"interval": 10,
+		"format": " {:%Y-%m-%d %H:%M}",
+		"format-alt": " {:%Y-%m-%d %H:%M:%S}",
+		"tooltip": false,
+	},
+	
+	"cpu": {
+		"interval": 2,
+		"format": "CPU@{avg_frequency}GHz: {usage}% ",
+		"tooltip": false,
+	},
+	
+	 "temperature": {
+		//"thermal-zone": 1,
+		"hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+		"critical-threshold": 85,
+		"format-critical": "{temperatureC}°C ",
+		"format": "{temperatureC}°C",
+		"interval": 2,
+		"tooltip": false,
+	 },
+	 
+	"custom/ram_usage": {
+		"interval": 2,
+		"format": "RAM: {}Gb",
+		"exec": "free -m | grep Mem: | cut -c29-32 | awk '{ SUM = $1 / 1000; } END { print SUM }' | cut -c1-4",
+		"tooltip": false,
+	},
+	
+	"custom/gpu_usage": {
+		"exec": "radeontop -d - -l 1 | tr -d '\n' | cut -s -d ',' -f3 | cut -s -d ' ' -f3 | tr -d '%' | awk '{ print $1 }' | tr -d '\n'",
+		"format": "{}% ",
+		"interval": 2,
+		"tooltip": false,
+	},
+	
+	"custom/gpu_temp": {
+		"exec": "sensors | grep edge | cut -c16-17",
+		"format": "GPU: {}°C  ",
+		"interval": 2,
+		"tooltip": false,
+	},
+	
+	"custom/weather": {
+		"format": "{}",
+		"tooltip": false,
+		"interval": 1800,
+		"exec": "python ~/.config/waybar/scripts/waybar-wttr.py",
+		"return-type": "json"
+	},
+
+	"custom/separator": {
+		"format": " ",
+		"interval": "once",
+		"tooltip": false
+	},
+
+	"custom/spacer": {
+		"format": " ",
+		"interval": "once",
+		"tooltip": false
+	},
+	
+	"custom/mpd_display": {
+		"exec": "(mpc | head -n 1 | awk -F '.' '{print $1}' | awk -F'/' -v var=$(date -d '7 day ago' +'%Y.%m.%d') '{print var_$2}' ; echo '  ' ; mpc status %currenttime%/%totaltime%) | cat | tr '\n' ' '",
+		"format": "{}",
+		"interval": 1,
+		"tooltip": false
+	}
+
+}
