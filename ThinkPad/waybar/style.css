@@ -1,0 +1,36 @@
+* {
+    border: none;
+    border-radius: 0;
+    /*font-family: "Hack", "Noto Color Emoji", sans-serif;*/
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Hack", "Font Awesome 5 Free", "Noto Color Emoji";
+}
+
+window#waybar {
+    background: #300040;
+    color: #e5e9f0;
+    opacity: 0.90;
+}
+
+#workspaces button.focused {
+    background: #522262;
+    border-bottom: 3px solid #e5e9f0;
+    color: #e5e9f0;
+    font-weight: 700;
+}
+
+#workspaces button {
+    background: #401050;
+    border-bottom: 3px solid #e5e9f0;
+    color: #b2b6c0;
+}
+
+#custom-spacer {
+  color: #1B5E20;
+  margin: 0 4px;
+}
+
+#battery {
+    margin-right: 25px;
+}
